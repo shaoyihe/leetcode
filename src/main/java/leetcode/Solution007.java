@@ -7,9 +7,9 @@ package leetcode;
  * </pre>
  * on 2018/8/2.
  */
-public class Solution7 {
+public class Solution007 {
     public static void main(String[] args) {
-        Solution7 solution5 = new Solution7();
+        Solution007 solution5 = new Solution007();
         System.err.println(solution5.reverse(1534236469));
     }
 

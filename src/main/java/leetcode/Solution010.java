@@ -7,9 +7,9 @@ package leetcode;
  * </pre>
  * on 2018/8/2.
  */
-public class Solution10 {
+public class Solution010 {
     public static void main(String[] args) {
-        Solution10 solution52 = new Solution10();
+        Solution010 solution52 = new Solution010();
 //        System.err.println(solution5.isMatch("aab", "c*a*b"));
     }
 

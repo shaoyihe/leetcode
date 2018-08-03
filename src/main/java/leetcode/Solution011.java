@@ -7,9 +7,9 @@ package leetcode;
  * </pre>
  * on 2018/8/2.
  */
-public class Solution11 {
+public class Solution011 {
     public static void main(String[] args) {
-        Solution11 solution11 = new Solution11();
+        Solution011 solution11 = new Solution011();
         //49
         System.err.println(solution11.maxArea2(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7}));
     }
