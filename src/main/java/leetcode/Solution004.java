@@ -7,9 +7,9 @@ package leetcode;
  * </pre>
  * on 2018/8/2.
  */
-public class Solution4 {
+public class Solution004 {
     public static void main(String[] args) {
-        Solution4 solution3 = new Solution4();
+        Solution004 solution3 = new Solution004();
         assert solution3.findMedianSortedArrays(new int[]{1, 3}, new int[]{2}) == 2.0;
         assert solution3.findMedianSortedArrays(new int[]{1, 2}, new int[]{3, 4}) == 2.5;
         assert solution3.findMedianSortedArrays(new int[]{1, 2, 3, 4}, new int[]{}) == 2.5;

@@ -7,9 +7,9 @@ package leetcode;
  * </pre>
  * on 2018/8/2.
  */
-public class Solution3 {
+public class Solution003 {
     public static void main(String[] args) {
-        Solution3 solution3 = new Solution3();
+        Solution003 solution3 = new Solution003();
         assert solution3.lengthOfLongestSubstring("abcabcbb") == 3;
         assert solution3.lengthOfLongestSubstring("bbbbb") == 1;
         assert solution3.lengthOfLongestSubstring(" ") == 1;

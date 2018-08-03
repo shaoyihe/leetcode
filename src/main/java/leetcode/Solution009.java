@@ -7,9 +7,9 @@ package leetcode;
  * </pre>
  * on 2018/8/2.
  */
-public class Solution9 {
+public class Solution009 {
     public static void main(String[] args) {
-        Solution9 solution5 = new Solution9();
+        Solution009 solution5 = new Solution009();
         System.err.println(solution5.isPalindrome(1000021));
     }
 

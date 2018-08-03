@@ -7,9 +7,9 @@ package leetcode;
  * </pre>
  * on 2018/8/2.
  */
-public class Solution5 {
+public class Solution005 {
     public static void main(String[] args) {
-        Solution5 solution5 = new Solution5();
+        Solution005 solution5 = new Solution005();
         System.err.println(solution5.longestPalindrome("babad"));
         System.err.println(solution5.longestPalindrome("cbbd"));
         System.err.println(solution5.longestPalindrome("babaddtattarrattatddetartrateedredividerb"));
