@@ -27,7 +27,7 @@ public class Solution025 {
     }
 
     public ListNode reverseKGroup(ListNode head, int k) {
-
+        return null;
     }
 
     void loop(ListNode pre, ListNode next, int number, int[] n) {
