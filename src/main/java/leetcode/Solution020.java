@@ -1,9 +1,11 @@
 package leetcode;
 
+import java.util.Stack;
+
 /**
  * <pre>
- *  https://leetcode.com/problems/palindrome-number
- * 9. Palindrome Number
+ *  https://leetcode.com/problems/valid-parentheses/description/
+ * 20 Valid Parentheses
  * </pre>
  * on 2018/8/2.
  */
@@ -11,6 +13,7 @@ public class Solution020 {
     public static void main(String[] args) {
         Solution020 solution020 = new Solution020();
         System.err.println(solution020.isValid("()[]{}")); //true
+        System.err.println(solution020.isValid("(([]){})")); //true
         System.err.println(solution020.isValid("([))")); //false
     }
 
@@ -19,22 +22,24 @@ public class Solution020 {
         char[] sChar = s.toCharArray();
         if (sChar.length == 0) return true;
         if (sChar.length % 2 != 0) return false;
-        return isValid(sChar, 0, sChar.length - 1);
+
+        Stack<Character> stack = new Stack<>();
+        for (char c : sChar) {
+            if (c == ')' || c == '}' || c == ']') {
+                if (stack.isEmpty()) return false;
+                if (!isPair(stack.pop(), c)) return false;
+
+            } else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
     }
 
-    private boolean isValid(char[] sChar, int from, int to) {
-        if (from > to) return true;
-        if (from == to) return false;
-        int left = (to - from + 1) / 2 - 1 + from, right = (to - from + 1) / 2 + from;
-        for (; left >= from && right <= to && isPair(sChar, left, right); --left, ++right) ;
-        return isValid(sChar, from, left) && isValid(sChar, right, to);
 
+    private boolean isPair(char left, char right) {
+        return (left == '(' && right == ')') ||
+                (left == '{' && right == '}') ||
+                (left == '[' && right == ']');
     }
-
-    private boolean isPair(char[] sChar, int left, int right) {
-        return (sChar[left] == '(' && sChar[right] == ')') ||
-                (sChar[left] == '{' && sChar[right] == '}') ||
-                (sChar[left] == '[' && sChar[right] == ']');
-    }
-
 }
