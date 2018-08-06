@@ -36,8 +36,6 @@ public class Solution063 {
             return cache[row][column] = 0;
         }
         if (cache[row][column] >= 0) return cache[row][column];
-        int val = loop(obstacleGrid, cache, row - 1, column, rowLength, columnLength) + loop(obstacleGrid, cache, row, column - 1, rowLength, columnLength);
-        cache[row][column] = val;
-        return val;
+        return cache[row][column] = loop(obstacleGrid, cache, row - 1, column, rowLength, columnLength) + loop(obstacleGrid, cache, row, column - 1, rowLength, columnLength);
     }
 }

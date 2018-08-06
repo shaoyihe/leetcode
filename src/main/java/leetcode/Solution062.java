@@ -20,6 +20,7 @@ public class Solution062 {
 
     /**
      * time out
+     *
      * @param m
      * @param n
      * @return
@@ -50,8 +51,6 @@ public class Solution062 {
             return 0;
         }
         if (cache[row][column] > 0) return cache[row][column];
-        int val = loop2(cache, row - 1, column, rowLength, columnLength) + loop2(cache, row, column - 1, rowLength, columnLength);
-        cache[row][column] = val;
-        return val;
+        return cache[row][column] = loop2(cache, row - 1, column, rowLength, columnLength) + loop2(cache, row, column - 1, rowLength, columnLength);
     }
 }
