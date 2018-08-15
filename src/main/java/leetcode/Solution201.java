@@ -20,17 +20,14 @@ public class Solution201 {
     }
 
     public int rangeBitwiseAnd(int m, int n) {
-        if (m == 0) return 0;
-        if (n - m <= 1) return (int) (n & m);
-
         //last 2^bit <= n
         int bit = 0;
         for (; (1 << (bit + 1)) <= n && bit < 31; ++bit) ;
 
         int result = 0;
         for (; bit >= 0; --bit) {
-            long mBit = (m >>> bit) & 1;
-            long nBit = (n >>> bit) & 1;
+            int mBit = (m >>> bit) & 1;
+            int nBit = (n >>> bit) & 1;
             if (mBit != nBit) break;
             if (mBit == 1) result |= 1 << bit;
         }
