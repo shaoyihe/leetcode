@@ -34,7 +34,7 @@ public class Solution018 {
                     } else if (total == required) {
                         // found
                         result.add(Arrays.asList(nums[i], nums[x], nums[j], nums[t]));
-                        for(; j < t && nums[j + 1] == nums[j]; ++j) ;
+                        for (; j < t && nums[j + 1] == nums[j]; ++j) ;
                         ++j;
 
                         for (; j < t && nums[t - 1] == nums[t]; --t) ;

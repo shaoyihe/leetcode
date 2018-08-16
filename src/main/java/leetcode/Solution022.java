@@ -28,36 +28,36 @@ public class Solution022 {
      * @param n
      * @return
      */
-        public List<String> generateParenthesis(int n) {
-            char[] c = new char[n * 2];
-            c[0] = '(';
-            c[c.length - 1] = ')';
-            List<String> result = new ArrayList<>();
-            loop(c, 1, result, 1, 0, n - 1, n - 1);
-            return result;
-        }
+    public List<String> generateParenthesis(int n) {
+        char[] c = new char[n * 2];
+        c[0] = '(';
+        c[c.length - 1] = ')';
+        List<String> result = new ArrayList<>();
+        loop(c, 1, result, 1, 0, n - 1, n - 1);
+        return result;
+    }
 
-        private void loop(char[] parenthesis, int index, List<String> result, int leftParenthesis, int rightParenthesis, int remainLeft, int remainRight) {
-            if (index < parenthesis.length - 1) {
-                //只能加左括号情绪
-                if (leftParenthesis == rightParenthesis) {
-                    parenthesis[index] = '(';
-                    loop(parenthesis, index + 1, result, leftParenthesis + 1, rightParenthesis, remainLeft - 1, remainRight);
-                } else {
-                    //2种情况
-                    if (remainLeft > 0) {
-                        char[] left = Arrays.copyOf(parenthesis, parenthesis.length);
-                        left[index] = '(';
-                        loop(left, index + 1, result, leftParenthesis + 1, rightParenthesis, remainLeft - 1, remainRight);
-                    }
-                    if (remainRight > 0) {
-                        parenthesis[index] = ')';
-                        loop(parenthesis, index + 1, result, leftParenthesis, rightParenthesis + 1, remainLeft, remainRight - 1);
-                    }
-                }
+    private void loop(char[] parenthesis, int index, List<String> result, int leftParenthesis, int rightParenthesis, int remainLeft, int remainRight) {
+        if (index < parenthesis.length - 1) {
+            //只能加左括号情绪
+            if (leftParenthesis == rightParenthesis) {
+                parenthesis[index] = '(';
+                loop(parenthesis, index + 1, result, leftParenthesis + 1, rightParenthesis, remainLeft - 1, remainRight);
             } else {
-                result.add(new String(parenthesis));
+                //2种情况
+                if (remainLeft > 0) {
+                    char[] left = Arrays.copyOf(parenthesis, parenthesis.length);
+                    left[index] = '(';
+                    loop(left, index + 1, result, leftParenthesis + 1, rightParenthesis, remainLeft - 1, remainRight);
+                }
+                if (remainRight > 0) {
+                    parenthesis[index] = ')';
+                    loop(parenthesis, index + 1, result, leftParenthesis, rightParenthesis + 1, remainLeft, remainRight - 1);
+                }
             }
+        } else {
+            result.add(new String(parenthesis));
         }
+    }
 
 }

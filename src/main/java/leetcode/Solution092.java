@@ -22,19 +22,6 @@ public class Solution092 {
         reverseBetween(listNode, 2, 4);
     }
 
-    /**
-     * Definition for singly-linked list.
-     */
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode reverseBetween(ListNode head, int m, int n) {
         if (m == n || head == null || head.next == null) return head;
 
@@ -73,6 +60,19 @@ public class Solution092 {
             }
         }
         return newHead;
+    }
+
+    /**
+     * Definition for singly-linked list.
+     */
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
 }

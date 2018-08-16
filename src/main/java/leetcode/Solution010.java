@@ -8,18 +8,18 @@ package leetcode;
  * on 2018/8/2.
  */
 public class Solution010 {
-    public static void main(String[] args) {
-        Solution010 solution52 = new Solution010();
-//        System.err.println(solution5.isMatch("aab", "c*a*b"));
-    }
-
+    private final char NOT_EXIST = '0';
     private char[] sChar;
     private char[] pChar;
     private int pIndex = 0;
     private int sIndex = 0;
     private boolean inLoopCousmer = false;
     private char inLoopCousmerChar;
-    private final char NOT_EXIST = '0';
+
+    public static void main(String[] args) {
+        Solution010 solution52 = new Solution010();
+//        System.err.println(solution5.isMatch("aab", "c*a*b"));
+    }
 
     /**
      * Input:

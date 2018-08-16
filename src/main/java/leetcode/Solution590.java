@@ -3,9 +3,7 @@ package leetcode;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * <pre>
@@ -19,21 +17,6 @@ public class Solution590 {
     @Test
     public void test() {
     }
-
-
-    class Node {
-        public int val;
-        public List<Node> children;
-
-        public Node() {
-        }
-
-        public Node(int _val, List<Node> _children) {
-            val = _val;
-            children = _children;
-        }
-    }
-
 
     public List<Integer> postorder(Node root) {
         ArrayList<Integer> result = new ArrayList<>();
@@ -49,6 +32,19 @@ public class Solution590 {
                 }
             }
             result.add(root.val);
+        }
+    }
+
+    class Node {
+        public int val;
+        public List<Node> children;
+
+        public Node() {
+        }
+
+        public Node(int _val, List<Node> _children) {
+            val = _val;
+            children = _children;
         }
     }
 

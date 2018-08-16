@@ -12,6 +12,16 @@ public class Solution876 {
         Solution876 solution11 = new Solution876();
     }
 
+    public ListNode middleNode(ListNode head) {
+        //The number of nodes in the given list will be between 1 and 100
+        ListNode[] total = new ListNode[100];
+        int index;
+        for (index = 0; head != null; head = head.next) {
+            total[index++] = head;
+        }
+        return total[index / 2];
+    }
+
     /**
      * Definition for singly-linked list.
      * public class ListNode {
@@ -28,15 +38,5 @@ public class Solution876 {
         ListNode(int x) {
             val = x;
         }
-    }
-
-    public ListNode middleNode(ListNode head) {
-        //The number of nodes in the given list will be between 1 and 100
-        ListNode[] total = new ListNode[100];
-        int index;
-        for (index = 0; head != null; head = head.next) {
-            total[index++] = head;
-        }
-        return total[index / 2];
     }
 }

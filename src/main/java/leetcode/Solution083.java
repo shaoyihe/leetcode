@@ -16,6 +16,14 @@ public class Solution083 {
     public void test() {
     }
 
+    public ListNode deleteDuplicates(ListNode head) {
+        for (ListNode cur = head, pre = head; cur != null; ) {
+            for (; cur.next != null && cur.next.val == pre.val; cur = cur.next) ;
+            pre = cur = pre.next = cur.next;
+        }
+        return head;
+    }
+
     /**
      * Definition for singly-linked list.
      */
@@ -27,14 +35,6 @@ public class Solution083 {
         ListNode(int x) {
             val = x;
         }
-    }
-
-    public ListNode deleteDuplicates(ListNode head) {
-        for (ListNode cur = head, pre = head; cur != null; ) {
-            for (; cur.next != null && cur.next.val == pre.val; cur = cur.next) ;
-            pre = cur = pre.next = cur.next;
-        }
-        return head;
     }
 
 }

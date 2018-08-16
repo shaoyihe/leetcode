@@ -13,7 +13,7 @@ public class Solution081 {
         int[] arr = {5, 1, 3};
         System.err.println(solution11.search(arr, 5));
         System.err.println(solution11.search(arr, 3));
-        System.err.println(solution11.search(new int[]{1,3,1,1,1}, 3));
+        System.err.println(solution11.search(new int[]{1, 3, 1, 1, 1}, 3));
 
     }
 

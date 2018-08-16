@@ -15,19 +15,6 @@ public class Solution108 {
     public void test() {
     }
 
-    /**
-     * Definition for a binary tree node.
-     */
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public TreeNode sortedArrayToBST(int[] nums) {
         if (nums == null) return null;
         return sortedArrayToBST(nums, 0, nums.length - 1);
@@ -42,5 +29,18 @@ public class Solution108 {
         cur.left = sortedArrayToBST(nums, from, middle - 1);
         cur.right = sortedArrayToBST(nums, middle + 1, to);
         return cur;
+    }
+
+    /**
+     * Definition for a binary tree node.
+     */
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }

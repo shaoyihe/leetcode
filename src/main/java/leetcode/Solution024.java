@@ -1,8 +1,5 @@
 package leetcode;
 
-import java.util.Comparator;
-import java.util.PriorityQueue;
-
 /**
  * <pre>
  *  https://leetcode.com/problems/merge-k-sorted-lists/description/
@@ -19,18 +16,6 @@ public class Solution024 {
         first.next.next.next = new ListNode(4);
 
         System.err.println(solution11.swapPairs(first));
-    }
-
-    /**
-     * Definition for singly-linked list.
-     */
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
     }
 
     public ListNode swapPairs(ListNode head) {
@@ -57,6 +42,18 @@ public class Solution024 {
             }
         }
         return newHead;
+    }
+
+    /**
+     * Definition for singly-linked list.
+     */
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
 }

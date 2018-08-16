@@ -11,6 +11,10 @@ import org.junit.Test;
  */
 public class Solution143 {
 
+    private ListNode head;
+    private ListNode headNext;
+    private boolean end = false;
+
     @Test
     public void test() {
         ListNode first = new ListNode(1);
@@ -21,23 +25,6 @@ public class Solution143 {
         reorderList(first);
         System.err.println(first);
     }
-
-    /**
-     * Definition for singly-linked list.
-     */
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
-    private ListNode head;
-    private ListNode headNext;
-    private boolean end = false;
 
     public void reorderList(ListNode head) {
         if (head == null || head.next == null) return;
@@ -62,6 +49,19 @@ public class Solution143 {
             } else {
                 end = true;
             }
+        }
+    }
+
+    /**
+     * Definition for singly-linked list.
+     */
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
         }
     }
 }

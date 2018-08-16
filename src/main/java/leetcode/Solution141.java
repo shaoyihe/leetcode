@@ -25,6 +25,17 @@ public class Solution141 {
 
     }
 
+    public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) return false;
+        return hasCycle(head, head.next.next);
+    }
+
+    private boolean hasCycle(ListNode first, ListNode sec) {
+        if (sec == null || sec.next == null) return false;
+        if (first == sec) return true;
+        return hasCycle(first.next, sec.next.next);
+    }
+
     /**
      * Definition for singly-linked list.
      */
@@ -36,16 +47,5 @@ public class Solution141 {
         ListNode(int x) {
             val = x;
         }
-    }
-
-    public boolean hasCycle(ListNode head) {
-        if (head == null || head.next == null) return false;
-        return hasCycle(head, head.next.next);
-    }
-
-    private boolean hasCycle(ListNode first, ListNode sec) {
-        if (sec == null || sec.next == null) return false;
-        if (first == sec) return true;
-        return hasCycle(first.next, sec.next.next);
     }
 }

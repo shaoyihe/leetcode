@@ -27,7 +27,7 @@ public class Solution169 {
      */
     public int majorityElement(int[] nums) {
         //the n/2 biggest element
-        int targetPos = nums.length / 2 ;
+        int targetPos = nums.length / 2;
 
         for (int from = 0, to = nums.length - 1; ; ) {
             int middle = (from + to) / 2;

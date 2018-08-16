@@ -25,18 +25,6 @@ public class Solution023 {
         System.err.println(solution11.mergeKLists2(new ListNode[]{first, second}));
     }
 
-    /**
-     * Definition for singly-linked list.
-     */
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
         if (lists.length == 1) return lists[0];
@@ -111,6 +99,18 @@ public class Solution023 {
             }
         }
         return head;
+    }
+
+    /**
+     * Definition for singly-linked list.
+     */
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
 }

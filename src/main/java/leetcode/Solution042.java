@@ -3,8 +3,6 @@ package leetcode;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -22,12 +20,6 @@ public class Solution042 {
         Assert.assertEquals(6, trap(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}));
 
         Assert.assertEquals(6, trap2(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}));
-    }
-
-
-    private class Count {
-        int val;
-        int times = 1;
     }
 
     private Count count(int val) {
@@ -86,8 +78,6 @@ public class Solution042 {
         return totalLength;
     }
 
-
-
     public int trap2(int[] heights) {
         if (heights == null || heights.length < 3) return 0;
 
@@ -129,6 +119,11 @@ public class Solution042 {
             }
         }
         return totalLength;
+    }
+
+    private class Count {
+        int val;
+        int times = 1;
     }
 
 }

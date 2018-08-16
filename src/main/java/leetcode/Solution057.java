@@ -1,7 +1,6 @@
 package leetcode;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -15,25 +14,6 @@ public class Solution057 {
     public static void main(String[] args) {
         Solution057 solution11 = new Solution057();
         int[][] result = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-    }
-
-    /**
-     * Definition for an interval.
-     */
-
-    public class Interval {
-        int start;
-        int end;
-
-        Interval() {
-            start = 0;
-            end = 0;
-        }
-
-        Interval(int s, int e) {
-            start = s;
-            end = e;
-        }
     }
 
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
@@ -61,6 +41,25 @@ public class Solution057 {
         }
         if (!found) intervals.add(newInterval);
         return intervals;
+    }
+
+    /**
+     * Definition for an interval.
+     */
+
+    public class Interval {
+        int start;
+        int end;
+
+        Interval() {
+            start = 0;
+            end = 0;
+        }
+
+        Interval(int s, int e) {
+            start = s;
+            end = e;
+        }
     }
 
 

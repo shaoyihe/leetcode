@@ -20,19 +20,6 @@ public class Solution206 {
         reverseList(listNode);
     }
 
-    /**
-     * Definition for singly-linked list.
-     */
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode reverseList(ListNode head) {
         if (head == null) return null;
 
@@ -49,6 +36,19 @@ public class Solution206 {
         }
 
         return newHead;
+    }
+
+    /**
+     * Definition for singly-linked list.
+     */
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
 }

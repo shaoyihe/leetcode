@@ -20,20 +20,6 @@ public class Solution095 {
     public void test() {
     }
 
-    /**
-     * Definition for a binary tree node.
-     */
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public List<TreeNode> generateTrees(int n) {
         return generateTrees(1, n);
     }
@@ -71,6 +57,20 @@ public class Solution095 {
         }
         if (treeNodes.isEmpty()) treeNodes.add(new TreeNode(from));
         return treeNodes;
+    }
+
+    /**
+     * Definition for a binary tree node.
+     */
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 
 }

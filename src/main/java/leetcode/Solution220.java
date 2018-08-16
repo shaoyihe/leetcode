@@ -1,8 +1,5 @@
 package leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * <pre>
  *  https://leetcode.com/problems/contains-duplicate-iii/description/

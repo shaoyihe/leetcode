@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 /**
  * <pre>
  *  https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/

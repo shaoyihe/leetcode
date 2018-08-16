@@ -20,19 +20,6 @@ public class Solution082 {
         deleteDuplicates(listNode);
     }
 
-    /**
-     * Definition for singly-linked list.
-     */
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) return head;
 
@@ -47,6 +34,19 @@ public class Solution082 {
         }
         if (iterHead != null) iterHead.next = null;
         return newHead;
+    }
+
+    /**
+     * Definition for singly-linked list.
+     */
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
 }

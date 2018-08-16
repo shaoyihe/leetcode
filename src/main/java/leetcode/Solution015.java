@@ -1,6 +1,9 @@
 package leetcode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * <pre>
@@ -24,7 +27,7 @@ public class Solution015 {
             for (int j = i + 1, t = nums.length - 1; j < t; ) {
                 int total = nums[j] + nums[t];
                 if (total > required) {
-                    for (; j < t && nums[t- 1] == nums[t]; --t) ;
+                    for (; j < t && nums[t - 1] == nums[t]; --t) ;
                     --t;
                 } else if (total == required) {
                     // found
@@ -32,7 +35,7 @@ public class Solution015 {
                     for (; j < t && nums[j + 1] == nums[j]; ++j) ;
                     ++j;
 
-                    for (; j < t && nums[t- 1] == nums[t]; --t) ;
+                    for (; j < t && nums[t - 1] == nums[t]; --t) ;
                     --t;
                 } else {
                     for (; j < t && nums[j + 1] == nums[j]; ++j) ;

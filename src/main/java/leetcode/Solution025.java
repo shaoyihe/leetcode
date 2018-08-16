@@ -13,6 +13,17 @@ public class Solution025 {
 //        System.err.println(solution020.isValid("([))")); //false
     }
 
+    public ListNode reverseKGroup(ListNode head, int k) {
+        return null;
+    }
+
+    void loop(ListNode pre, ListNode next, int number, int[] n) {
+        if (next != null) {
+            n[0]++;
+            loop(next, next.next, number + 1, n);
+        }
+    }
+
     /**
      * Definition for singly-linked list.
      */
@@ -23,17 +34,6 @@ public class Solution025 {
 
         ListNode(int x) {
             val = x;
-        }
-    }
-
-    public ListNode reverseKGroup(ListNode head, int k) {
-        return null;
-    }
-
-    void loop(ListNode pre, ListNode next, int number, int[] n) {
-        if (next != null) {
-            n[0]++;
-            loop(next, next.next, number + 1, n);
         }
     }
 }

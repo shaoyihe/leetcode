@@ -16,6 +16,14 @@ public class Solution100 {
     public void test() {
     }
 
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null) return q == null;
+        if (q == null) return false;
+        if (p.val != q.val) return false;
+
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+
     /**
      * Definition for a binary tree node.
      */
@@ -28,14 +36,6 @@ public class Solution100 {
         TreeNode(int x) {
             val = x;
         }
-    }
-
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null) return q == null;
-        if (q == null) return false;
-        if (p.val != q.val) return false;
-
-        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 
 }

@@ -1,9 +1,7 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * <pre>
@@ -49,7 +47,7 @@ public class Solution029 {
                     }
                 }
                 break;
-            }else {
+            } else {
                 break;
             }
         }

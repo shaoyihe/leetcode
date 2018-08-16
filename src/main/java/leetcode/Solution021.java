@@ -18,18 +18,6 @@ public class Solution021 {
         System.err.println(solution11.mergeTwoLists(first, first));
     }
 
-    /**
-     * Definition for singly-linked list.
-     */
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = null, pre = null;
         for (; ; ) {
@@ -64,6 +52,18 @@ public class Solution021 {
             }
         }
         return head;
+    }
+
+    /**
+     * Definition for singly-linked list.
+     */
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
 }

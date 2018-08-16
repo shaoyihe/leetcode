@@ -18,19 +18,6 @@ public class Solution019 {
         System.err.println(solution11.removeNthFromEnd(first, 4));
     }
 
-    /**
-     * Definition for singly-linked list.
-     */
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null) return null;
         int[] totalLength = {0};
@@ -46,6 +33,19 @@ public class Solution019 {
             if (n == total[0] - pos) {
                 cur.next = next.next;
             }
+        }
+    }
+
+    /**
+     * Definition for singly-linked list.
+     */
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
         }
     }
 
