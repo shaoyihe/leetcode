@@ -17,7 +17,7 @@ public class Solution401 extends BaseTest {
 
     @Test
     public void test() {
-        assertEquals(nweSet("1:00", "2:00", "4:00", "8:00", "0:01", "0:02", "0:04", "0:08", "0:16", "0:32"), nweSet(readBinaryWatch(1)));
+        assertEquals(newSet("1:00", "2:00", "4:00", "8:00", "0:01", "0:02", "0:04", "0:08", "0:16", "0:32"), newSet(readBinaryWatch(1)));
     }
 
     public List<String> readBinaryWatch(int num) {
