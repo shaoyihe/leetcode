@@ -32,6 +32,12 @@ public class Solution303 extends BaseTest {
         assertEquals(1, numArray3.sumRange(0, 2));
         assertEquals(-1, numArray3.sumRange(2, 5));
         assertEquals(-3, numArray3.sumRange(0, 5));
+
+
+        NumArray4 numArray4 = new NumArray4(new int[]{-2, 0, 3, -5, 2, -1});
+        assertEquals(1, numArray4.sumRange(0, 2));
+        assertEquals(-1, numArray4.sumRange(2, 5));
+        assertEquals(-3, numArray4.sumRange(0, 5));
     }
 
     class NumArray {
@@ -115,11 +121,11 @@ public class Solution303 extends BaseTest {
     }
 
 
-    class NumArray4 {
+    class NumArray4  {
 
         private int[] nums;
         private Integer[][] sumNums;
-        private final int finalNumber = 10;
+        private final int finalNumber = 20;
         private final int[] toNumber = new int[finalNumber];
 
         public NumArray4(int[] nums) {
@@ -136,15 +142,23 @@ public class Solution303 extends BaseTest {
         }
 
         private int innerSumRange(int i, int j, int toIndex) {
-            if (i < j) return 0;
+            if (i > j) return 0;
             if (i == j) return nums[i];
 
-            for (int from = toIndex; from >= 0; ++from) {
-
+            for (int from = toIndex; from >= 0; --from) {
+                if (j - i + 1 >= toNumber[from]) {
+                    if (sumNums[from][i] != null) {
+                        return sumNums[from][i] + innerSumRange(i + toNumber[from], j, toIndex);
+                    }
+                    return (sumNums[from][i] = innerSumRange(i, i + toNumber[from] - 1, toIndex - 1)) + innerSumRange(i + toNumber[from], j, toIndex);
+                }
             }
 
-            //todo
-            return 0;
+            int sum = 0;
+            for (int t = i; t <= j; ++t) {
+                sum += nums[t];
+            }
+            return sum;
         }
 
     }
