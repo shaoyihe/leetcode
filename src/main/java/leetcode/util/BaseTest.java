@@ -22,4 +22,8 @@ public abstract class BaseTest extends Assert {
     protected <T> void assertToSetEqual(List<T> expect, List<T> actual) {
         assertEquals(newSet(expect), newSet(actual));
     }
+
+    protected int[] arr(int... objs) {
+        return objs;
+    }
 }
