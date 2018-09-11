@@ -23,16 +23,17 @@ public abstract class BaseTest extends Assert {
         assertEquals(newSet(expect), newSet(actual));
     }
 
-    protected <T> void assertArrEqual(int[] expect, int[] actual) {
+    protected void assertArrEqual(int[] expect, int[] actual) {
         boolean equal = true;
-        if (expect == actual || expect.length == actual.length) {
+        if (expect.length == actual.length) {
             for (int i = 0; i < expect.length; ++i) {
                 if (expect[i] != actual[i]) {
                     equal = false;
                     break;
                 }
             }
-        }
+        } else equal = false;
+
         if (!equal) {
             fail("expect " + Arrays.toString(expect) + "; and actual " + Arrays.toString(actual));
         }
