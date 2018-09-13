@@ -3,7 +3,10 @@ package leetcode;
 import leetcode.util.BaseTest;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <pre>
@@ -16,7 +19,7 @@ public class Solution472 extends BaseTest {
 
     @Test
     public void test() {
-        assertToSetEqual(Arrays.asList("catsdogcats", "dogcatsdog", "ratcatdogcat"), findAllConcatenatedWordsInADict(arr("cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat")));
+        assertToSetEqual(asList("catsdogcats", "dogcatsdog", "ratcatdogcat"), findAllConcatenatedWordsInADict(arr("cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat")));
     }
 
     private class Node {

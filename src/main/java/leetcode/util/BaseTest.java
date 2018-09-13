@@ -2,10 +2,7 @@ package leetcode.util;
 
 import org.junit.Assert;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * on 2018/8/21.
@@ -45,5 +42,9 @@ public abstract class BaseTest extends Assert {
 
     protected String[] arr(String... objs) {
         return objs;
+    }
+
+    protected <T> List<T> asList(T... a) {
+        return Arrays.asList(a);
     }
 }
