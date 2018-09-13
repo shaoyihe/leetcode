@@ -42,4 +42,8 @@ public abstract class BaseTest extends Assert {
     protected int[] arr(int... objs) {
         return objs;
     }
+
+    protected String[] arr(String... objs) {
+        return objs;
+    }
 }
