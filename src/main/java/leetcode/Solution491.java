@@ -3,7 +3,10 @@ package leetcode;
 import leetcode.util.BaseTest;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * <pre>
@@ -20,47 +23,28 @@ public class Solution491 extends BaseTest {
     }
 
     public List<List<Integer>> findSubsequences(int[] nums) {
+        if (nums == null || nums.length < 2) return new ArrayList<>();
+        Set<List<Integer>> result = new HashSet<>();
 
-        List<List<Integer>> result = new ArrayList<>();
-        if (nums == null || nums.length < 2) return result;
-        Arrays.sort(nums);
-
-        for (int i = 1, preVal = nums[0], occCount = 1; i < nums.length; ++i) {
-            if (nums[i] == preVal) occCount++;
-            else {
-                occCount = 1;
-                preVal = nums[i];
-            }
-
-            for (int j = 0, resultSize = result.size(); j < resultSize; ++j) {
-                List<Integer> curIntegers = result.get(j);
-                if (occCount >= 2) {
-                    if (curIntegers.size() >= occCount - 1 && curIntegers.get(curIntegers.size() - 1) == nums[i] && curIntegers.get(curIntegers.size() - (occCount - 1)) == nums[i]) {
-                        List<Integer> clone = (List<Integer>) ((ArrayList) curIntegers).clone();
-                        clone.add(nums[i]);
-                        result.add(clone);
-                    }
-                } else {
-                    if (curIntegers.get(curIntegers.size() - 1) <= nums[i]) {
-                        List<Integer> clone = (List<Integer>) ((ArrayList) curIntegers).clone();
-                        clone.add(nums[i]);
-                        result.add(clone);
-                    }
+        Set<List<Integer>> temp = new HashSet<>();
+        for (int i = 1; i < nums.length; ++i) {
+            for (List<Integer> curIntegers : result) {
+                if (curIntegers.get(curIntegers.size() - 1) <= nums[i]) {
+                    List<Integer> clone = (List<Integer>) ((ArrayList) curIntegers).clone();
+                    clone.add(nums[i]);
+                    temp.add(clone);
                 }
             }
-            if (occCount == 2) {
-                result.add(addTo(nums[i], nums[i]));
-            }
-            if (occCount >= 2) continue;
+            result.addAll(temp);
+            temp.clear();
 
             for (int j = 0; j < i; ++j) {
-                if (j > 0 && nums[j] == nums[j - 1]) continue;
                 if (nums[j] <= nums[i]) {
                     result.add(addTo(nums[j], nums[i]));
                 }
             }
         }
-        return result;
+        return new ArrayList<>(result);
     }
 
     private List<Integer> addTo(int a, int b) {
