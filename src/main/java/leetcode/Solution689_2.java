@@ -16,9 +16,10 @@ public class Solution689_2 extends BaseTest {
 
     @Test
     public void test() {
-//        assertArrayEquals(arr(0, 3, 5), maxSumOfThreeSubarrays(arr(1, 2, 1, 2, 6, 7, 5, 1), 2));
-//        assertArrayEquals(arr(4, 5, 7), maxSumOfThreeSubarrays(arr(4, 5, 10, 6, 11, 17, 4, 11, 1, 3), 1));
+        assertArrayEquals(arr(0, 3, 5), maxSumOfThreeSubarrays(arr(1, 2, 1, 2, 6, 7, 5, 1), 2));
+        assertArrayEquals(arr(4, 5, 7), maxSumOfThreeSubarrays(arr(4, 5, 10, 6, 11, 17, 4, 11, 1, 3), 1));
         assertArrayEquals(arr(0, 3, 6), maxSumOfThreeSubarrays(arr(18, 11, 14, 7, 16, 4, 18, 11, 4, 8), 2));
+        assertArrayEquals(arr(10, 29, 36), maxSumOfThreeSubarrays(arr(1, 17, 16, 10, 6, 18, 1, 1, 16, 12, 9, 20, 14, 15, 5, 17, 20, 16, 4, 3, 3, 17, 13, 9, 16, 3, 8, 8, 14, 12, 20, 14, 20, 9, 1, 12, 14, 17, 15, 19), 4));
     }
 
     public int[] maxSumOfThreeSubarrays(int[] nums, int k) {
@@ -62,21 +63,18 @@ public class Solution689_2 extends BaseTest {
                     int back = maxSumOfThreeSubarrays(rangeValues, cache, query + 1, i + k, nums, k);
                     if (curRangeValue + back > maxValue) {
                         maxValue = curRangeValue + back;
+                        maxIndex = i;
                     }
-                    cache[query][i] = Math.max(cache[query][i], curRangeValue + back);
-
                 } else {
                     if (curRangeValue > maxValue) {
                         maxValue = curRangeValue;
+                        maxIndex = i;
                     }
                 }
             }
         }
-        if (query == 2) {
-            Arrays.fill(cache[query], index, nums.length - k, maxValue);
-        }
-
-        return cache[query][index] = maxValue;
+        Arrays.fill(cache[query], index, maxIndex + 1, maxValue);
+        return maxValue;
     }
 
 
